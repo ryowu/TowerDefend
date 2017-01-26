@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E06AE423-1B0A-4223-9020-E2CA44813AD7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Common</RootNamespace>
+    <AssemblyName>Common</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\Bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Engine\BattleField.cs" />
+    <Compile Include="Engine\Enums.cs" />
+    <Compile Include="Engine\Events.cs" />
+    <Compile Include="Engine\Map.cs" />
+    <Compile Include="Engine\MapNode.cs" />
+    <Compile Include="FunctionManagers\ImageManager.cs" />
+    <Compile Include="FunctionManagers\SerializationManager.cs" />
+    <Compile Include="ImageTextControl.xaml.cs">
+      <DependentUpon>ImageTextControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Objects\ActiveObject.cs" />
+    <Compile Include="Objects\MapBlock.cs" />
+    <Compile Include="Objects\Monsters\BaseMonster.cs" />
+    <Compile Include="Objects\Monsters\Flame.cs" />
+    <Compile Include="Objects\Monsters\MonsterControl.xaml.cs">
+      <DependentUpon>MonsterControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Objects\Monsters\Slime.cs" />
+    <Compile Include="Objects\Others\CommonBullet.cs" />
+    <Compile Include="Objects\Others\HPDamage.cs" />
+    <Compile Include="Objects\Others\StarBullet.cs" />
+    <Compile Include="Objects\Others\SunshineBullet.cs" />
+    <Compile Include="Objects\Towers\BaseTower.cs" />
+    <Compile Include="Objects\Towers\MachineGunTower.cs" />
+    <Compile Include="Objects\Towers\MissleTower.cs" />
+    <Compile Include="Objects\Towers\MultiGunTower.cs" />
+    <Compile Include="Objects\Towers\SunshineTower.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utility.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\map.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\towers.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\smallbullet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\grass.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\mud.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\monster_suit1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\tower_suit2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="ImageTextControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Objects\Monsters\MonsterControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\commonbullet.gif" />
+    <Resource Include="Resources\starbullet.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\sunshine.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\font_suit1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\coin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\redx.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
